@@ -1,4 +1,4 @@
-function Home() {
+function Home({ onViewProjects }) {
   return (
     <section id="home" className="home">
 
@@ -7,7 +7,7 @@ function Home() {
         <p className="welcome">WELCOME TO MY PORTFOLIO</p>
 
         <h1>
-          Hi, I'm <span>Your Name</span>
+          Hi, I'm Sanjay Nemalapuri
         </h1>
 
         <h2>ECE Student & Aspiring Developer</h2>
@@ -18,6 +18,7 @@ function Home() {
         </p>
 
         <div className="home-buttons">
+          
           <a href="#projects" className="btn">
             View Projects
           </a>
@@ -38,5 +39,4 @@ function Home() {
     </section>
   );
 }
-
-export default Home;
+export default Home

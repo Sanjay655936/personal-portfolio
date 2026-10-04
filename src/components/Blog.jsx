@@ -1,22 +1,114 @@
+import { useState } from "react";
+
 function Blog() {
+  const [selectedBlog, setSelectedBlog] = useState(null);
 
-  const posts = [
+  const blogs = [
     {
-      title: "Introduction to Embedded Systems",
-      text:
-        "Learn the fundamentals of microcontrollers, sensors and actuators."
+      icon: "💻",
+      title: "My Journey into Web Development",
+      date: "2026",
+      short:
+        "My experience learning HTML, CSS, JavaScript and React and building my first portfolio website.",
+      content: `
+        My journey into web development started with learning the basics of
+        HTML and CSS. At first, creating a simple webpage helped me understand
+        how websites are structured and styled.
+
+        After learning HTML and CSS, I started exploring JavaScript. JavaScript
+        helped me understand how websites can become interactive and dynamic.
+
+        Later, I started learning React and Vite. React helped me understand
+        how reusable components can be created and how a complete website can
+        be divided into different sections.
+
+        While developing my personal portfolio, I worked on sections such as
+        Home, About, Skills, Projects, Achievements, Blog and Contact.
+
+        This project helped me improve my programming skills and gave me
+        practical experience in frontend development.
+      `
     },
 
     {
-      title: "Getting Started with React",
-      text:
-        "Understand components, JSX, props and state in React."
+      icon: "🤖",
+      title: "Learning Embedded Systems",
+      date: "2026",
+      short:
+        "My experience learning microcontrollers, sensors, timers, interrupts and embedded programming.",
+      content: `
+        Embedded systems are one of my major areas of interest as an
+        Electronics and Communication Engineering student.
+
+        I started learning about microcontrollers and gradually explored
+        GPIO, ADC, timers, PWM, interrupts, UART and DMA.
+
+        Working with STM32 microcontrollers helped me understand how
+        hardware and software work together. I learned how to configure
+        peripherals and write programs to control different hardware
+        components.
+
+        I also worked with sensors, motors and other electronic components.
+        These practical experiments helped me understand concepts that are
+        difficult to learn only through theory.
+
+        Embedded systems have increased my interest in developing
+        real-world hardware and IoT applications.
+      `
     },
 
     {
-      title: "Understanding Data Structures",
-      text:
-        "A beginner-friendly introduction to arrays, stacks, queues, trees and graphs."
+      icon: "🌱",
+      title: "Building an IoT Greenhouse",
+      date: "2025",
+      short:
+        "How I worked on an IoT-based greenhouse automation project using sensors and actuators.",
+      content: `
+        Greenhouse Automation is an IoT-based project designed to maintain
+        suitable environmental conditions for plants.
+
+        The system uses sensors to monitor parameters such as temperature
+        and soil moisture. Based on the sensor readings, different actuators
+        can be controlled automatically.
+
+        A water pump can be activated when the soil moisture becomes low.
+        Similarly, a DC fan can be used to control temperature and a heater
+        can be activated when additional heat is required.
+
+        This project helped me understand sensor interfacing, automation,
+        microcontrollers and IoT concepts.
+
+        The main objective was to reduce manual monitoring and create a
+        system that can automatically respond to environmental conditions.
+      `
+    },
+
+    {
+      icon: "🏙️",
+      title: "Smart City Simulator Using Data Structures",
+      date: "2026",
+      short:
+        "How data structures and algorithms can be used to simulate smart-city services.",
+      content: `
+        Smart City Simulator is an academic project that demonstrates how
+        data structures and algorithms can be applied to real-world city
+        management problems.
+
+        The system models important services such as traffic management,
+        electricity distribution, water supply and waste management.
+
+        Different data structures are used for different requirements.
+        Graphs can represent roads and city connections, queues can manage
+        incoming service requests, heaps can prioritize important tasks and
+        trees can represent hierarchical systems.
+
+        Minimum Spanning Tree algorithms such as Prim's and Kruskal's
+        algorithms can also be used for optimizing infrastructure
+        connections.
+
+        This project helped me understand how theoretical data structures
+        can be applied to practical problems.
+      `
     }
   ];
 
@@ -27,23 +119,73 @@ function Blog() {
 
       <div className="blog-container">
 
-        {posts.map((post, index) => (
+        {blogs.map((blog, index) => (
+          <div className="blog-card" key={index}>
 
-          <article className="blog-card" key={index}>
+            <div className="blog-icon">
+              {blog.icon}
+            </div>
 
-            <h3>{post.title}</h3>
+            <span className="blog-date">
+              {blog.date}
+            </span>
 
-            <p>{post.text}</p>
+            <h3>{blog.title}</h3>
 
-            <a href="#blog">
-              Read More →
-            </a>
+            <p>{blog.short}</p>
 
-          </article>
+            <button
+              className="read-more-btn"
+              onClick={() => setSelectedBlog(blog)}
+            >
+              Read More
+            </button>
 
+          </div>
         ))}
 
       </div>
+
+
+      {/* BLOG POPUP */}
+
+      {selectedBlog && (
+        <div className="blog-modal">
+
+          <div className="blog-modal-box">
+
+            <button
+              className="blog-close"
+              onClick={() => setSelectedBlog(null)}
+            >
+              ✕
+            </button>
+
+            <div className="blog-modal-icon">
+              {selectedBlog.icon}
+            </div>
+
+            <span className="blog-date">
+              {selectedBlog.date}
+            </span>
+
+            <h2>{selectedBlog.title}</h2>
+
+            <div className="blog-content">
+              {selectedBlog.content
+                .trim()
+                .split("\n\n")
+                .map((paragraph, index) => (
+                  <p key={index}>
+                    {paragraph.trim()}
+                  </p>
+                ))}
+            </div>
+
+          </div>
+
+        </div>
+      )}
 
     </section>
   );

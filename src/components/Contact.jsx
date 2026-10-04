@@ -1,36 +1,21 @@
 import { useState } from "react";
 
 function Contact() {
+  const [messageSent, setMessageSent] = useState(false);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleChange = (event) => {
+    // Show success message
+    setMessageSent(true);
 
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    });
+    // Clear the form
+    e.target.reset();
 
-  };
-
-  const handleSubmit = (event) => {
-
-    event.preventDefault();
-
-    alert(
-      `Thank you ${formData.name}! Your message has been received.`
-    );
-
-    setFormData({
-      name: "",
-      email: "",
-      message: ""
-    });
-
+    // Hide success message after 4 seconds
+    setTimeout(() => {
+      setMessageSent(false);
+    }, 4000);
   };
 
   return (
@@ -38,14 +23,15 @@ function Contact() {
 
       <h2>Contact Me</h2>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <form
+        className="contact-form"
+        onSubmit={handleSubmit}
+      >
 
         <input
           type="text"
           name="name"
           placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
           required
         />
 
@@ -53,22 +39,31 @@ function Contact() {
           type="email"
           name="email"
           placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
+          required
+        />
+
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
           required
         />
 
         <textarea
           name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
+          placeholder="Write your message..."
           required
         ></textarea>
 
         <button type="submit">
           Send Message
         </button>
+
+        {messageSent && (
+          <p className="contact-success">
+            ✅ Your message has been sent successfully!
+          </p>
+        )}
 
       </form>
 
@@ -77,4 +72,3 @@ function Contact() {
 }
 
 export default Contact;
-

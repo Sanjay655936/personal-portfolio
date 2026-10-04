@@ -416,4 +416,468 @@ footer {
   }
 
 }
+/* PROJECT DETAILS */
+
+.project-details {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2000;
+
+  padding: 20px;
+}
+
+.project-details-box {
+  position: relative;
+
+  width: 700px;
+  max-width: 95%;
+
+  max-height: 85vh;
+  overflow-y: auto;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-details-icon {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.project-details-box h2 {
+  font-size: 30px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.project-details-box h4 {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.project-details-box h3 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+}
+
+.project-details-box p {
+  line-height: 1.8;
+  color: #374151;
+}
+
+.project-details-box ul {
+  padding-left: 25px;
+}
+
+.project-details-box li {
+  margin-bottom: 8px;
+}
+
+.close-btn {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  border: none;
+
+  background: #ef4444;
+
+  color: white;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #dc2626;
+}
+/* ACHIEVEMENT ICON */
+
+.achievement-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.achievement-type {
+  color: #2563eb;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.achievement-card {
+  transition: 0.3s;
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px);
+}
+
+.achievement-card h3 {
+  margin-bottom: 12px;
+}
+
+.achievement-card p {
+  line-height: 1.6;
+}
+
+.achievement-card span {
+  display: block;
+  margin: 15px 0;
+  color: #666;
+}
+
+.achievement-btn {
+  padding: 10px 18px;
+
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+.achievement-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* ACHIEVEMENT POPUP */
+
+.achievement-modal {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 3000;
+
+  padding: 20px;
+}
+
+.achievement-modal-box {
+  position: relative;
+
+  width: 650px;
+
+  max-width: 95%;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.achievement-modal-icon {
+  font-size: 60px;
+
+  margin-bottom: 10px;
+}
+
+.achievement-modal-box h2 {
+  color: #1e3a8a;
+
+  margin: 10px 0;
+}
+
+.achievement-modal-box h4 {
+  color: #555;
+
+  margin-bottom: 20px;
+}
+
+.achievement-modal-box h3 {
+  margin-top: 25px;
+
+  margin-bottom: 10px;
+
+  color: #2563eb;
+}
+
+.achievement-description {
+  line-height: 1.8;
+
+  color: #444;
+}
+
+.achievement-close {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.achievement-close:hover {
+  background: #dc2626;
+}
+/* PROJECTS INSIDE ACHIEVEMENTS */
+
+.projects-popup {
+  width: 800px;
+  max-width: 95%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.popup-subtitle {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.popup-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-right: 5px;
+}
+
+.popup-project-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 20px;
+
+  background: #f8fafc;
+
+  border-radius: 10px;
+
+  border: 1px solid #e5e7eb;
+
+  transition: 0.3s;
+}
+
+.popup-project-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px #ddd;
+}
+
+.popup-project-icon {
+  font-size: 45px;
+}
+
+.popup-project-card h3 {
+  margin-bottom: 8px;
+}
+
+.popup-project-card p {
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* PROJECT FEATURE LIST */
+
+.project-feature-list {
+  padding-left: 25px;
+}
+
+.project-feature-list li {
+  margin-bottom: 8px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .popup-project-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .projects-popup {
+    padding: 25px;
+  }
+
+}
+/* BLOG */
+
+.blog-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.blog-date {
+  display: block;
+  color: #2563eb;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.read-more-btn {
+  padding: 10px 18px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.read-more-btn:hover {
+  background: #1d4ed8;
+}
+
+/* BLOG POPUP */
+
+.blog-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  z-index: 4000;
+}
+
+.blog-modal-box {
+  position: relative;
+
+  width: 750px;
+  max-width: 95%;
+
+  max-height: 85vh;
+
+  overflow-y: auto;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.blog-modal-icon {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.blog-modal-box h2 {
+  font-size: 30px;
+  color: #1e3a8a;
+  margin: 10px 0 25px;
+}
+
+.blog-content p {
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 18px;
+}
+
+/* CLOSE BUTTON */
+
+.blog-close {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ef4444;
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.blog-close:hover {
+  background: #dc2626;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .blog-modal-box {
+    padding: 25px;
+  }
+
+  .blog-modal-box h2 {
+    font-size: 24px;
+  }
+
+}.contact-success {
+  text-align: center;
+  margin-top: 15px;
+  padding: 15px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 8px;
+  font-weight: bold;
+}
 
