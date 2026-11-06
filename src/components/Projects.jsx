@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+import GitHubProjects from "./GithubProjects";
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -116,7 +118,6 @@ function Projects() {
 
       </div>
 
-
       {/* PROJECT DETAILS */}
 
       {selectedProject && (
@@ -161,6 +162,20 @@ function Projects() {
 
         </div>
       )}
+
+      {/* GITHUB PROJECTS SECTION */}
+
+      <div className="github-projects">
+
+        <h2>My GitHub Repositories</h2>
+
+        <p>
+          Explore my latest projects directly from GitHub.
+        </p>
+
+        <GitHubProjects />
+
+      </div>
 
     </section>
   );

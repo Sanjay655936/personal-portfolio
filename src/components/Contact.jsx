@@ -1,32 +1,51 @@
 import { useState } from "react";
+import api from "../services/api";
 
 function Contact() {
-  const [messageSent, setMessageSent] = useState(false);
+  const [success, setSuccess] = useState("");
+const [error, setError] = useState("");
+const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // Show success message
-    setMessageSent(true);
+  const formData = new FormData(e.target);
 
-    // Clear the form
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    message: formData.get("message")
+  };
+
+  setLoading(true);
+  setSuccess("");
+  setError("");
+
+  try {
+    const response = await api.post("/api/contact", data);
+
+    setSuccess(response.data.message);
     e.target.reset();
 
-    // Hide success message after 4 seconds
-    setTimeout(() => {
-      setMessageSent(false);
-    }, 4000);
-  };
+  } catch (err) {
+    setError(
+      err.response?.data?.message ||
+      "Unable to send your message."
+    );
+  } finally {
+    setLoading(false);
+  }
+};
+  const [messageSent, setMessageSent] = useState(false);
+
+
 
   return (
     <section id="contact" className="section">
 
       <h2>Contact Me</h2>
 
-      <form
-        className="contact-form"
-        onSubmit={handleSubmit}
-      >
+     <form onSubmit={handleSubmit}>
 
         <input
           type="text"
