@@ -29,12 +29,14 @@ function Home({ onViewProjects }) {
         </div>
 
       </div>
-
-      <div className="profile">
+        <div className="profile">
         <div className="profile-circle">
           👨‍💻
         </div>
       </div>
+
+
+
 
     </section>
   );

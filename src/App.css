@@ -881,3 +881,51 @@ footer {
   font-weight: bold;
 }
 
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  padding: 60px 8%;
+}
+
+.home-content {
+  flex: 1;
+}
+
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.home-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #2563eb;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-image img {
+    width: 220px;
+    height: 220px;
+  }
+}
+.home-image img {
+  width: 330px;
+  height: 330px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 5px solid #2563eb;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  display: block;
+}
